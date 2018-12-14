@@ -1,0 +1,4 @@
+weather_api==1.0.6
+jsonpickle==1.0
+pyTelegramBotAPI==3.6.6
+weather==0.9.1
