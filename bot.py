@@ -1,9 +1,9 @@
 from config import token
 from weather import Weather, Unit
-import telebot
+import telebot, time
 import helpers.helper as helper
 
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(token, threaded=False)
 
 
 @bot.message_handler(commands=['start', 'go', 'testRun'])
@@ -21,4 +21,9 @@ def location_handler(message):
 
 
 if __name__ == '__main__':
-    bot.infinity_polling()
+    while True:
+        try:
+            bot.infinity_polling()
+        except Exception as e:
+            print(e)
+            time.sleep(15)

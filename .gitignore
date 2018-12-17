@@ -1,2 +1,4 @@
 config.py
 .git-credentials
+.idea
+.idea/*
